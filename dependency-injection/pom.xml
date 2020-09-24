@@ -7,15 +7,11 @@
     <groupId>com.zhuyc.spring</groupId>
     <artifactId>spring-lessons</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <relativePath>../pom.xml</relativePath>
   </parent>
+  <artifactId>dependency-injection</artifactId>
 
-  <groupId>com.zhuyc.spring</groupId>
-  <artifactId>ioc-container-overview</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <name>dependency-injection</name>
 
-  <name>ioc-container-overview</name>
-  <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
   <properties>
@@ -24,6 +20,20 @@
     <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
 
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>${groupId}</groupId>
+      <artifactId>ioc-container-overview</artifactId>
+      <version>${version}</version>
+      <scope>compile</scope>
+    </dependency>
+  </dependencies>
 
   <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->

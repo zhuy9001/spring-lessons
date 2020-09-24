@@ -12,6 +12,8 @@ public class User {
 	private Long id;
 	private String name;
 
+
+
 	public Long getId() {
 		return id;
 	}
@@ -34,5 +36,12 @@ public class User {
 				"id=" + id +
 				", name='" + name + '\'' +
 				'}';
+	}
+
+	public static User createUser() {
+		User user=new User();
+		user.setId(2L);
+		user.setName("老陈");
+		return user;
 	}
 }

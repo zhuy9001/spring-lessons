@@ -6,6 +6,7 @@ import org.springframework.beans.factory.support.BeanDefinitionReaderUtils;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Import;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
@@ -18,9 +19,11 @@ import java.util.Map;
  * @PackageName com.zhuyc.spring.bean.definition
  * @Date 2020/9/22 16:38
  */
+@Import(AnnotationBeanDefinitionDemo.Conifg.class)
 public class AnnotationBeanDefinitionDemo {
 
 	public static void main(String[] args) {
+		//创建 BeanFactory容器
 		AnnotationConfigApplicationContext applicationContext=new AnnotationConfigApplicationContext();
 		applicationContext.register(Conifg.class);
 

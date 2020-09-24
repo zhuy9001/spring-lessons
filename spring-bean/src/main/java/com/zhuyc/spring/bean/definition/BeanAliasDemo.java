@@ -14,7 +14,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class BeanAliasDemo {
 
 	public static void main(String[] args) {
-		BeanFactory beanFactory=new ClassPathXmlApplicationContext("classpath:/META-INF/dependency-beandefinitions-context.xml");
+		BeanFactory beanFactory=new ClassPathXmlApplicationContext("classpath:/META-INF/bean-definitions-context.xml");
 		User user=(User) beanFactory.getBean("user",User.class);
 		User zhuycUser=(User) beanFactory.getBean("zhuyc-user",User.class);
 

@@ -11,6 +11,9 @@
   <modules>
     <module>ioc-container-overview</module>
       <module>spring-bean</module>
+      <module>qrcode</module>
+      <module>dependency-lookup</module>
+      <module>dependency-injection</module>
   </modules>
 
   <name>spring-lessons</name>

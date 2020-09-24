@@ -3,6 +3,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+
   <parent>
     <groupId>com.zhuyc.spring</groupId>
     <artifactId>spring-lessons</artifactId>
@@ -10,11 +11,9 @@
     <relativePath>../pom.xml</relativePath>
   </parent>
 
-  <groupId>com.zhuyc.spring</groupId>
-  <artifactId>ioc-container-overview</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <artifactId>dependency-lookup</artifactId>
 
-  <name>ioc-container-overview</name>
+  <name>dependency-lookup</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -24,6 +23,19 @@
     <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
 
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>${groupId}</groupId>
+      <artifactId>ioc-container-overview</artifactId>
+      <version>${version}</version>
+    </dependency>
+  </dependencies>
 
   <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
