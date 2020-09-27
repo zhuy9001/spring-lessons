@@ -3,60 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <title>二维码生成</title>
-    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
-    <script  src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+<!--    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>-->
+<!--    <script  src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>-->
 </head>
 
 <body>
-<img id="logo" src="800pxlogo.jpg" style="display: none;"/>
 <div id="qrcode_div"  style="width: 150px;height: 150px; position: absolute;top: 100px;right: 75px;display:none;">
     <div id="qrcode"    style="width: 125px;height: 125px;
     position: relative;margin-top: 0px;margin-left: 7px;margin-right: 8px;"></div>
-    <span id="qrcode_span" style="width: 125px;height: 20px;
-    position: relative;margin-top: 5px;margin-left: 7px;margin-right: 8px;font-size: 23px;"></span>
+    <p id="qrcode_span" style="width: 125px;height: 20px;
+    position: relative;margin-top: 5px;margin-left: 7px;margin-right: 8px;font-size: 23px;"></p>
 </div>
 
 
 </body>
+<script src="https://libs.baidu.com/jquery/1.4.4/jquery.js"></script>
+<!--<script src="http://pgloa.pgl-world.com/wui/common/jquery/jquery.js"/>-->
+<script  src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
 <script type="text/javascript">
     $(function(){
         var href=window.location.href;
-        // var href="http://pgloa.pgl-world.com/workflow/request/ViewRequest.jsp?requestid=387673&isovertime=0";
 
         if(href.indexOf("ViewRequest")>0){
             var requestId=getUrlParam("requestid");
             if(requestId!=false){
                 var text="https://mdsapi.pgl-world.com.cn/api/oa/detail/"+requestId;
-                // var qrcode = new QRCode("qrcode", {
-                //     width: 100,
-                //     height: 100,
-                //     colorDark : "#000000",
-                //     colorLight : "#ffffff",
-                //     src:'800pxlogo.jpg',
-                //     correctLevel : QRCode.CorrectLevel.H
-                // });
-                // qrcode.makeCode(text);
+
                 var qrWidth = 125;
                 var qrHeight = 125;
-                var logoQrWidth = qrWidth / 4;
-                var logoQrHeight = qrHeight / 4;
+
                 $('#qrcode').qrcode({
                     render: "canvas",    //设置渲染方式，有table和canvas
                     text: text,
                     width: qrWidth, //二维码的宽度
                     height: qrHeight //二维码的高度
                 });
-                $("#qrcode canvas")[0].getContext('2d').drawImage($("#logo")[0], (qrWidth - logoQrWidth) / 2,(qrHeight - logoQrHeight) / 2, logoQrWidth, logoQrHeight);
                 $("#qrcode_span").text("ID : "+requestId);
                 $("#qrcode_div").show();
             }
         }
     });
     function getUrlParam(name) {
-        // 取得url中?后面的字符
         var query = window.location.search.substring(1);
-        // var query="requestid=387673&isovertime=0";
-        // 把参数按&拆分成数组
+
         var param_arr = query.split("&");
         for (var i = 0; i < param_arr.length; i++) {
             var pair = param_arr[i].split("=");

@@ -7,7 +7,7 @@
 
     <import resource="dependency-lookup-context.xml"/>
 
-        <bean id="userRepository" class="com.zhuyc.spring.ioc.overview.domain.repository.UserRepository" autowire="byType">
+        <bean id="userRepository" class="com.zhuyc.spring.ioc.overview.repository.UserRepository" autowire="byType">
            <!-- <property name="users">
                 <util:list>
                     <ref bean="superUser"/>

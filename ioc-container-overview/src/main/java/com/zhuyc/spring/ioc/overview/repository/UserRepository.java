@@ -1,4 +1,4 @@
-package com.zhuyc.spring.ioc.overview.domain.repository;
+package com.zhuyc.spring.ioc.overview.repository;
 
 import com.zhuyc.spring.ioc.overview.domain.User;
 import org.springframework.beans.factory.BeanFactory;
@@ -11,7 +11,7 @@ import java.util.Collection;
  * @author zhuyc
  * @Description TODO
  * @Classname UserRepository
- * @PackageName com.zhuyc.spring.ioc.overview.domain.repository
+ * @PackageName com.zhuyc.spring.ioc.overview.repository
  * @Date 2020/9/21 16:46
  */
 public class UserRepository {

@@ -1,16 +1,12 @@
 package com.zhuyc.spring.ioc.overview.dependency.injection;
 
-import com.zhuyc.spring.ioc.overview.annotation.Super;
 import com.zhuyc.spring.ioc.overview.domain.User;
-import com.zhuyc.spring.ioc.overview.domain.repository.UserRepository;
+import com.zhuyc.spring.ioc.overview.repository.UserRepository;
 import org.springframework.beans.factory.BeanFactory;
-import org.springframework.beans.factory.ListableBeanFactory;
 import org.springframework.beans.factory.ObjectFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.env.Environment;
-
-import java.util.Map;
 
 /**
  * @author zhuyc
